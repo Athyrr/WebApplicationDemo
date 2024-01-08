@@ -1,0 +1,16 @@
+﻿@model Message
+
+<h1>Formulaire d'ajout</h1>
+
+<form asp-action="AddMessage">
+    <label>Emetteur</label>
+    <input asp-for="Emeteur"></input>
+
+    <label>Contenu</label>
+    <input asp-for="Contenu"/>
+
+    <label>Date</label>
+    <input asp-for="Date"></input>
+
+    <button>Ajouter</button>
+</form>

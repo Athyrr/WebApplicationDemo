@@ -1,0 +1,17 @@
+﻿@model Message
+
+<p>@TempData["info"]</p>
+
+<h1>Details</h1>
+
+<p>Emetteur : @Model.Emeteur</p>
+<p>Contenu : @Model.Contenu</p>
+<p>Date : @Model.Date</p>
+
+<a class="btn btn-primary" asp-action="EditMessage" asp-route-messID="@Model.Id">Edit</a>
+<a class="btn btn-primary" asp-action="DeleteMessage" asp-route-messID="@Model.Id">Delete</a>
+
+
+
+
+

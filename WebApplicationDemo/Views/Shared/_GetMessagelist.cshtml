@@ -1,0 +1,12 @@
+﻿@model List<Message>
+
+
+
+@foreach (var message in Model)
+{
+    <p>Message ID = @message.Id</p>
+    <p>@message.Emeteur : @message.Contenu, fait le @message.Date</p>
+
+    <a class="btn btn-primary" asp-action="GetMessagePV" asp-route-id="@message.Id">Details</a>
+    
+}

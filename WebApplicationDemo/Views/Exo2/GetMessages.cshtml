@@ -1,0 +1,13 @@
+﻿@model List<Message>
+
+<h1><strong>Liste de messages</strong></h1>
+
+@foreach (var message in Model)
+{
+    <p>Message ID = @message.Id</p>
+    <p>@message.Emeteur : @message.Contenu, fait le @message.Date</p>
+
+    <a class="btn btn-primary" asp-action="GetMessage" asp-route-id="@message.Id">Details</a>
+    <a class="btn btn-primary" asp-action="DeleteMessage" asp-route-messID="@message.Id">Delete</a>
+    <a class="btn btn-primary" asp-action="EditMessage" asp-route-messID="@message.Id">Edit</a>
+}

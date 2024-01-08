@@ -1,0 +1,9 @@
+﻿@model Message 
+
+<form asp-action="EditMessage">
+    <input asp-for="Id" type="hidden"/>
+    <label> Nouveau contenu </label>
+    <input asp-for="Contenu" type="text"/>
+
+    <button>Modifier</button>
+</form>
