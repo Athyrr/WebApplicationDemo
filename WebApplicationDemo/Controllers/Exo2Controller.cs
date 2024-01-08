@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities;
+using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
-using WebApplicationDemo.Models;
 
 namespace WebApplicationDemo.Controllers
 {
@@ -54,7 +54,6 @@ namespace WebApplicationDemo.Controllers
         public IActionResult AddMessage(Message message)
         {
             message.Id = messages.Count + 1;
-
 
             messages.Add(message);
 

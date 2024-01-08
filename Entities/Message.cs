@@ -1,4 +1,4 @@
-﻿namespace WebApplicationDemo.Models
+﻿namespace Entities
 {
     public class Message
     {

@@ -15,7 +15,7 @@ namespace WebApplicationDemo.ViewComponents
         {
             var num = _randomGenService.GetRandom(min, max);
 
-            List<int> values = new() {min, num, max};
+            List<int> values = new() { min, num, max };
 
             return View(values);
         }

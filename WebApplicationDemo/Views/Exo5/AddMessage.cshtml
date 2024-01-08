@@ -1,0 +1,22 @@
+﻿@model Message
+
+<h1>Formulaire d'ajout</h1>
+
+<form asp-action="AddMessage">
+    <label>Emetteur</label>
+    <input asp-for="Emeteur" required></input>
+    <p>@TempData["EmetRequired"]</p>
+    <p>@TempData["UniqueError"]</p>
+
+    <label>Contenu</label>
+    <input asp-for="Contenu" />
+    <p>@TempData["LenghtMessage"]</p>
+
+
+    <label>Date</label>
+    <input asp-for="Date"></input>
+
+    <p>@TempData["Added"]</p>
+
+    <button>Ajouter</button>
+</form>
