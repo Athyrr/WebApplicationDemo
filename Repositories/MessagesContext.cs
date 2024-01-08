@@ -28,7 +28,7 @@ namespace Repositories
         // Données par défaut
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var m1 = new Message() { Id = 1, Contenu = "content default"  };
+            var m1 = new Message() { Id = 1, Contenu = "content default 1" };
             var m2 = new Message() { Id = 2, Contenu = "content default 2"};
 
             modelBuilder.Entity<Message>().HasData(m1);
