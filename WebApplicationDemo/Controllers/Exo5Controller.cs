@@ -1,5 +1,7 @@
-﻿using Entities;
+﻿//using Entities;
+using Entities;
 using Microsoft.AspNetCore.Mvc;
+using WebApplicationDemo.Models;
 
 namespace WebApplicationDemo.Controllers
 {

@@ -1,0 +1,10 @@
+﻿@model List<Message>
+
+    <h2>Liste de Messages</h2>
+
+    <table action="GetMessages">
+        <tr>
+            @for(var item in Model)
+            <td>@item.Emetteur</td>
+        </tr>
+    </table>

@@ -1,3 +1,4 @@
+using WebApplicationDemo.Middleware;
 using WebApplicationDemo.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.Use404Middleware();
 
 app.UseRouting();
 
