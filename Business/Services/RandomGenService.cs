@@ -1,4 +1,4 @@
-﻿namespace WebApplicationDemo.Services
+﻿namespace Business.Services
 {
     public class RandomGenService : IRandomGenService
     {

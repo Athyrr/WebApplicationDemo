@@ -1,5 +1,6 @@
 ﻿using Business.Contracts;
 using Entities;
+using Repositories.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace Business
 {
     public class MessageBusiness : IMessageBusiness
     {
-        public IMessageBusiness messageRepository;
+        public IMessageRepository messageRepository;
 
-        public MessageBusiness(IMessageBusiness messageBusiness)
+        public MessageBusiness(IMessageRepository messageRepository)
         {
-            this.messageRepository = messageBusiness;
+            this.messageRepository = messageRepository;
         }
 
         public async Task AddMessageAsync(Message message)

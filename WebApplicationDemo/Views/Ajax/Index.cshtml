@@ -1,0 +1,59 @@
+﻿
+
+<h2>Nom de personne</h2>
+<input type="text" id="nameInput" placeholder="Name"></input>
+
+
+<h2>Personne</h2>
+<div>
+    <p id="personContent"></p>
+</div>
+
+<button id="buttonPerson">PersonBtn</button>
+
+
+<h2>Random ViewComponent</h2>
+<div>
+    <p id="VcContent"></p>
+</div>
+
+<button id="buttonRandom">RandomBtn</button>
+
+
+<h2>Search part</h2>
+<input id="searchContent"></input>
+<p id="searchResponse"></p>
+<button id="searchBtn" type="submit">Search</button>
+
+<script>
+    $(function () {
+        $("#buttonPerson").on('click', (e) => {
+            $.get("/Ajax/GetPerson", {
+                name: $("#nameInput").val()
+            }, function (data) {
+                $("#personContent").text(data.name)
+            });
+        });
+    });
+    
+    $(function () {
+        $("#buttonRandom").on('click', (e) => {
+            $.get("/Ajax/GetRandomVC", {
+                min: 0,
+                max: 100
+            }, function (data) {
+                $("#VcContent").html(data)
+            });
+        });
+    });
+    
+    $(function () {
+        $("#searchBtn").on('click', (e) => {
+            $.get("/Ajax/Search", {
+                name: $("#searchContent").val()
+            }, function (data) {
+                $("#searchResponse").html(data)
+            });
+        });
+    });
+</script>

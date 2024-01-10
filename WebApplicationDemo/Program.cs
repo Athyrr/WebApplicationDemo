@@ -1,13 +1,24 @@
+using Business;
+using Business.Contracts;
+using Business.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Repositories;
+using Repositories.Contracts;
 using WebApplicationDemo.Middleware;
-using WebApplicationDemo.Services;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddDbContext<MessagesContext>(ob
+    => ob.UseSqlServer(connectionString: @"Data Source=(localdb)\MSSQLLOCALDB;Initial Catalog=ASPNetDemo;Integrated Security=True"));
+
 //builder.Services.AddScoped<IRandomGenService, RandomGenSuperService>();
 builder.Services.AddScoped<IRandomGenService, RandomGenService>();
+builder.Services.AddTransient<IMessageBusiness, MessageBusiness>();
+builder.Services.AddTransient<IMessageRepository, MessageRepository>();
 
 var app = builder.Build();
 
@@ -22,6 +33,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+//New Middleware
 app.Use404Middleware();
 
 app.UseRouting();

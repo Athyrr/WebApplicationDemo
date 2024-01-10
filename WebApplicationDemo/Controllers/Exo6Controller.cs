@@ -21,8 +21,8 @@ namespace WebApplicationDemo.Controllers
         {
             return View(await messageBusiness.GetMessagesAsync());
         }
-        [HttpGet]
 
+        [HttpGet]
         public async Task<IActionResult> GetMessage(int id)
         {
             var mess = await messageBusiness.GetMessageAsync(id);

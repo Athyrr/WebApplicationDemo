@@ -1,4 +1,4 @@
-﻿namespace WebApplicationDemo.Services
+﻿namespace Business.Services
 {
     //CLASS EXEMPLE NON UTILISEE
     public class RandomGenSuperService : IRandomGenService

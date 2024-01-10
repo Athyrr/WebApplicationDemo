@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using WebApplicationDemo.Services;
+﻿using Business.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplicationDemo.ViewComponents
 {

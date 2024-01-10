@@ -14,12 +14,13 @@ namespace Repositories
 {
     public class MessagesContext : DbContext
     {
+        public MessagesContext(DbContextOptions<MessagesContext> dbContextOptions) : base(dbContextOptions) { }
+   
         //Entitées
         public DbSet<Message> Messages { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLOCALDB;Initial Catalog=ASPNetDemo;Integrated Security=True");
             //optionsBuilder.LogTo(Console.WriteLine);
 
             base.OnConfiguring(optionsBuilder);
